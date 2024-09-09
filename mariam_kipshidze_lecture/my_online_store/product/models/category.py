@@ -7,7 +7,7 @@ class Category(models.Model):
     order = models.PositiveSmallIntegerField(verbose_name=_('Order'))
 
     def __str__(self):
-        return f'Category name {self.title}, {self.order}'
+        return f'Category name {self.title}, order: {self.order}'
 
     class Meta:
         verbose_name = _('Category')

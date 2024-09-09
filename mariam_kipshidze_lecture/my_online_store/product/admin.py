@@ -1,9 +1,10 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 
 from product.models import Product, Category, Cart, Brand, Tag, Attribute
 
 # admin.site.register(Product)
-admin.site.register(Category)
+# admin.site.register(Category)
 admin.site.register(Cart)
 admin.site.register(Brand)
 admin.site.register(Tag)
@@ -43,3 +44,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_per_page = 5
 
     inlines = [AttributeInline]
+
+@admin.register(Category)
+class CategoryAdmin(SortableAdminMixin, admin.ModelAdmin):
+    pass
