@@ -45,6 +45,8 @@ class Product(models.Model):
 
     @property
     def tag_titles(self):
+        if not self.tags.exists():
+            return ''
         tags = self.tags.values_list('title', flat=True)
         tag_titles = "Tag titles: "
         for tag in list(tags)[:-1]:
