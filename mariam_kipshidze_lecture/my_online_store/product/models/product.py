@@ -22,6 +22,7 @@ class Product(models.Model):
         blank=True
     )
     title = models.CharField(verbose_name=_('Title'), max_length=255)
+    slug = models.SlugField(verbose_name=_('Slug'), unique=True, null=True)
     price = models.DecimalField(verbose_name=_('Price'), max_digits=5, decimal_places=2)
     description = models.TextField(verbose_name=_('Description'), blank=True, null=True)
     active = models.BooleanField(verbose_name=_('Active'), default=True)
